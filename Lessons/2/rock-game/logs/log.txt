@@ -1,0 +1,5 @@
+
+March 18, 2021 7:56 PM === [object Object] WINS; User: scissors; PC: paper;
+March 18, 2021 7:57 PM === PC WINS; User: scissors; PC: rock;
+March 18, 2021 7:57 PM === Nobody WINS; User: paper; PC: paper;
+March 18, 2021 7:57 PM === User WINS; User: paper; PC: rock;

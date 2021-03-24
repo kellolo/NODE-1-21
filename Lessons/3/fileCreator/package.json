@@ -1,0 +1,16 @@
+{
+  "name": "fileCreator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "s-full": "node utils/component-creator --n",
+    "s-less": "node utils/component-creator --s --n"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}

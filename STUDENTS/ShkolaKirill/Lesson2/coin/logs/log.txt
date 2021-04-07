@@ -1,0 +1,12 @@
+
+March 24, 2021 6:09 PM === User WINS; User: head; Result: head;
+March 24, 2021 6:09 PM === PC WINS; User: head; Result: tail;
+March 24, 2021 6:09 PM === PC WINS; User: head; Result: tail;
+March 24, 2021 6:09 PM === User WINS; User: head; Result: head;
+March 24, 2021 6:09 PM === User WINS; User: head; Result: head;
+March 24, 2021 6:09 PM === User WINS; User: head; Result: head;
+March 24, 2021 6:10 PM === PC WINS; User: head; Result: tail;
+March 24, 2021 6:10 PM === User WINS; User: head; Result: head;
+March 24, 2021 6:10 PM === PC WINS; User: head; Result: tail;
+March 24, 2021 6:10 PM === User WINS; User: head; Result: head;
+March 24, 2021 6:41 PM === PC WINS; User: head; Result: tail;

@@ -1,0 +1,6 @@
+
+request: [object Object]
+request: {"translate":"понедельник","lang1":"ru","lang2":"en"}
+Wed Mar 31 2021 10:04:12 GMT+0700 (GMT+07:00): request: {"translate":"понедельник","lang1":"ru","lang2":"en"}
+2021-3-31 10:05:06: request: {"translate":"понедельник","lang1":"ru","lang2":"en"}
+2021-3-31 10:15:52: request: {"translate":"привет","lang1":"ru","lang2":"en"}

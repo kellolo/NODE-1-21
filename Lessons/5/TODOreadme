@@ -1,0 +1,10 @@
+//TODO list
+
+
+id (AI) | title(VARCHAR) | done (Boolean)
+
+1         Сделачть что-то   false
+2         Сделачть что-то   false
+3         Сделачть что-то   true
+4         Сделачть что-то   false
+

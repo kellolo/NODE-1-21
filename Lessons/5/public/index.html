@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="name"> name
+  </div>
+  <div>
+    <input type="text" id="age"> age
+  </div>
+  <div>
+    <button onclick="addUser()">Add</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const addUser = () => {
+      const name = document.querySelector('#name').value;
+      const age = +document.querySelector('#age').value || 18;
+
+      axios.post('/user', { name, age });
+    };
+  </script>
+</body>
+</html>

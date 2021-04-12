@@ -1,0 +1,13 @@
+{
+ "totalAmount": 3,
+ "totalPrice": 203,
+ "content": [
+  {
+   "amount": 1,
+   "productName": "MANGO PEOPLE T-SHIRT",
+   "productPrice": 52,
+   "productImg": "https://raw.githubusercontent.com/kellolo/static/master/img/JS1_shop/featuredItem1.jpg",
+   "productId": "prod_0"
+  }
+ ]
+}

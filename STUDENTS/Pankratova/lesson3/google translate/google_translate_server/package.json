@@ -1,0 +1,24 @@
+{
+  "name": "express-google",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "unirest": "^0.6.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json",
+      "*.txt",
+      "*.log"
+    ]
+  }
+}

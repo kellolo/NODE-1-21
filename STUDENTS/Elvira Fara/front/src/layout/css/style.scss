@@ -1,0 +1,30 @@
+@import "_variables.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+@import "shoppingCart.scss";
+@import "singlePage.scss";
+@import "checkout.scss";
+@import "product.scss";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $mainFont;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.containerWrap {
+    margin: 0 auto;
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

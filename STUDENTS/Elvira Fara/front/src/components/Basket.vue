@@ -1,24 +1,51 @@
 <template>
-  <div id="basket">
-    <Item
-      v-for="item of items"
-      type="basket"
-      :item="item"
-      @del="remove"
-      :key="item.productId"
-    />
+  <div v-frag>
+    <a
+      href="#"
+      class="cart"
+      @click="showBasket = !showBasket"
+      id="toggle-basket"
+    >
+      <img src="@/assets/img/cart.png" alt="cart" />
+      <div id="cart-badge" class="cartBadge">{{ totalCount }}</div>
+    </a>
+    <div class="dropCart" v-show="showBasket">
+      <div id="basket">
+        <Item
+          v-for="item of items"
+          type="dropBasket"
+          :item="item"
+          @del="remove"
+          :key="item.productId"
+        />
+      </div>
+      <div class="dropCart_total">
+        <span class="dropCart_totalPrice">TOTAL</span>
+        <span class="dropCart_totalPrice">${{ totalPrice }}</span>
+      </div>
+      <router-link to="/checkout" class="dropCart_button">
+        Checkout
+      </router-link>
+      <router-link to="/shoppingCart" class="dropCart_button">
+        Go to Cart
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
 import Item from "./Item.vue";
-import { get, post, put, deleteReq } from "@/core/requests";
+import frag from "vue-frag";
 import { mapGetters } from "vuex";
 
 export default {
+  directives: {
+    frag,
+  },
   components: { Item },
   data() {
     return {
+      showBasket: false,
       url: "/api/basket",
       // url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
     };
@@ -50,9 +77,16 @@ export default {
   },
   computed: {
     ...mapGetters({ items: "basket_getter" }),
+    totalCount: function () {
+      let totalCnt = 0;
+      this.items.forEach((el) => (totalCnt += el.amount));
+      return totalCnt;
+    },
+    totalPrice: function () {
+      let totalPrc = 0;
+      this.items.forEach((el) => (totalPrc += el.productPrice * el.amount));
+      return totalPrc;
+    },
   },
 };
 </script>
-
-<style>
-</style>

@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        basket: []
+        basket: [],
+        token: ''
     },
     mutations: {
         basket_load: (state, payload) => {
@@ -20,10 +21,13 @@ export default new Vuex.Store({
         },
         basket_change: (state, payload) => {
             payload.item.amount = payload.amount;
+        },
+        setToken: (state, token) => {
+            state.token = token;
         }
     },
     actions: {
-        async loadBasket({ commit }, url) { // payload - массив товаров из джейсона
+        async loadBasket({ commit }, url) {
             let payload = (await get(url)).content;
             commit('basket_load', payload);
         },
@@ -51,13 +55,29 @@ export default new Vuex.Store({
         },
         async changeAmount({ commit }, item) {
             try {
-                const response = await put('/api/basket/' + item.productId, item.amount);
+                const response = await put('/api/basket/' + item.productId, item);
                 if (response.status) {
                     commit('basket_change', { item, amount: item.amount });
                 }
             }
             catch (err) {
                 console.log(err);
+            }
+        },
+        async login({ dispatch, commit }, user) {
+            try {
+                const response = user.action === 'register' ?
+                    await post('/api/user', user) :
+                    await put('/api/user', user);
+                if (response.token) {
+                    commit('setToken', response.token);
+                    window.localStorage.setItem('tokenAuth', response.token);
+                }
+                return response;
+            }
+            catch (err) {
+                console.log(err);
+                return null;
             }
         }
     },

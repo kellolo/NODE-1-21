@@ -1,0 +1,140 @@
+.leftNavCheckout {
+    .leftNavItem {
+        border-bottom: 1px solid #f0f0f0;
+        .leftNavHead {
+            height: 75px;
+            width: 100%;
+            border: none;
+            button {
+                @include textUpper();
+                text-align: left;
+                height: inherit;
+                width: 100%;
+                border: none;
+                background-color: white;
+                outline: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+        }
+        .leftNavBody {
+            margin-bottom: 15px;
+            @extend %textMain;
+            padding: 15px 0 15px 30px;
+            @media(max-width: 440px) {
+                padding: 0;
+            }
+            .leftNavList { 
+                li {
+                    list-style: none;
+                    &:not(:last-child) {
+                        margin-bottom: 12px;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: #6f6e6e;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.formCheckout {
+    margin-bottom: 30px;
+    .shippingHead {
+        @include textUpper(13px, 400, #222222);
+    }
+    .shippingNote {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #b3b2b2;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .shippingRadios {
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        label {
+            position: relative;
+            padding-left: 30px;
+            &::before {
+                content:'';
+                width: 14px;
+                height: 14px;
+                border: 2px solid black;
+                border-radius: 50%;
+                position: absolute;
+                top: calc(50% - 7px);
+                left: 0;
+            }
+        }
+        input {
+            display: none;
+            &:checked + label::before {
+                background-color: rgb(44, 44, 44);
+            }
+        }
+    }
+    .shippingRefs {
+        padding: 30px 0;
+        a {
+            color: #b3b2b2;
+        }
+    }
+    button {
+        @include textUpper(14px, 700, #4a4a4a);
+        width: 180px;
+        height: 50px;
+        background: none;
+        border: 1px solid #eaeaea;
+        outline: none;
+    }
+    .shippingInputs {
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        label {
+            @include textUpper(12px, 400, #222222);
+            margin-bottom: 10px;
+            span {
+                font-size: 17px;
+                line-height: 20px;
+                font-weight: 400;
+                color: $mainColor;
+            }
+        }
+        input {
+            height: 45px;
+            border: 1px solid #eaeaea;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            outline: none;
+        }
+        &+ .shippingNote {
+            color: $mainColor;
+            margin-bottom: 27px;
+        }
+    }
+    .registerButton {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        button {
+            margin-right: 20px;
+        }
+        div {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #222222;
+            @media (max-width: 371px) {
+                margin-top: 15px;
+            }
+        }
+    }
+}

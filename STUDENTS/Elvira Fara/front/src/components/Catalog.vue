@@ -1,13 +1,6 @@
 <template>
-  <div>
-    <div id="catalog">
-      <Item v-for="el of items" :key="el.productId" :item="el" @add="addItem" />
-    </div>
-    <div class="featured-items__undertitle">
-      <a href="#"
-        >Browse All Product <i class="fas fa-long-arrow-alt-right"></i
-      ></a>
-    </div>
+  <div id="catalog">
+    <Item v-for="el of items" :key="el.productId" :item="el" @add="addItem" />
   </div>
 </template>
 

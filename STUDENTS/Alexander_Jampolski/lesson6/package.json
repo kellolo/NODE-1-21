@@ -2,10 +2,11 @@
   "name": "6",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "api": "nodemon api"
+    "api": "nodemon api/src"
   },
   "dependencies": {
     "axios": "^0.21.1",

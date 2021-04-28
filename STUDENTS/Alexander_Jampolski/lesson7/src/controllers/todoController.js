@@ -1,10 +1,11 @@
-import {sendQuery} from '../db/index.js';
+import sendQuery from '../db/index.js';
 
 // Display list of todolist items.
 export const todoList = async (req, res) => {
     const command = `
         SELECT id, title, done
-        FROM todo;
+        FROM todo
+        WHERE id_user = ${req.params.id};
     `;
     sendQuery(req, res, command);
 }
@@ -13,8 +14,8 @@ export const todoList = async (req, res) => {
 export const todoCreateTask = async (req, res) => {
     const {title, done} = req.body;
     const command = `
-        INSERT INTO todo (title, done)
-        VALUES ('${title}', ${done});
+        INSERT INTO todo (title, done, id_user)
+        VALUES ('${title}', ${done}, ${req.params.id});
     `;
     sendQuery(req, res, command);
 }

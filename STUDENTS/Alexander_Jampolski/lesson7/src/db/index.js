@@ -1,21 +1,9 @@
-import mysql2 from 'mysql2';
+import dbConnection from './dbConnection.js'
 
-const config = {
-    host: 'localhost',
-    user: 'root',
-    database: 'node',
-    password: 'rootroot',
-}
-
-const dataBase = () => {
-    const connection = mysql2.createConnection(config);
-    return connection;
-};
-
-export const sendQuery = (req, res, command) => {
-    dataBase().connect(err => {
+const sendQuery = (req, res, command) => {
+    dbConnection.connect(err => {
         if (!err) {
-            dataBase().query(command, (err, result) => {
+            dbConnection.query(command, (err, result) => {
                 if (!err) {
                     res.json(result)
                 } else {
@@ -28,3 +16,5 @@ export const sendQuery = (req, res, command) => {
         }
     });
 }
+
+export default sendQuery;

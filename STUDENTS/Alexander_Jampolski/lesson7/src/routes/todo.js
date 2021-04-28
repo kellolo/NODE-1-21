@@ -4,10 +4,10 @@ import {todoList, todoCreateTask, todoUpdateTask, todoDeleteTask} from '../contr
 const router = Router();
 
 // GET all todolist items
-router.get('/api/list', todoList);
+router.get('/api/list/:id', todoList);
 
 // POST request for creating todolist item.
-router.post('/api/list', todoCreateTask);
+router.post('/api/list/:id', todoCreateTask);
 
 // PUT request to update todolist item.
 router.put('/api/list/:id', todoUpdateTask);

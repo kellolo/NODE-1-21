@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+$mainColor: #f16d7f;
+$mainFont: Lato, sans-serif;
+
+%textUpper {
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+%textMain {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+@mixin textUpper($_textSize: 14px, $_textWeight: 700, $_textColor: #2f2f2f) {
+    @extend %textUpper;
+    font-weight: $_textWeight;
+    font-size: $_textSize;
+    color: $_textColor;
+}

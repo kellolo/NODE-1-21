@@ -1,0 +1,213 @@
+.sliderSingle {
+    height: 777px;
+    background: url(../../assets/img/slider1.jpg) no-repeat center center;
+    background-size: cover;
+    @media(max-width: 440px) {
+        height: 600px;
+    }
+    .sliderArrows {
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            .sliderArrow {
+                height: 47px;
+                width: 47px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(42,42,42,0.14);
+                    i {
+                        font-size: 24px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        color: #ffffff;
+                    }
+                &:hover {
+                    background-color: $mainColor;
+                }
+            }
+    }
+}
+
+.productInfoSingle {
+    padding-top: 73px !important;
+    padding-bottom: 122px !important;
+    background-color: white;
+    border: 1px solid #eaeaea;
+    position: relative;
+    top: -86px;
+    @media(max-width: 440px) {
+        top: -40px;
+        padding-bottom: 73px !important;
+    }
+    .productInfoSingleWrap {
+        width: 58%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media(max-width: 930px) {
+            width: 80%;
+        }
+        @media(max-width: 680px) {
+            width: 100%;
+        }
+        .productCategorySingle {
+            @include textUpper($mainColor);
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+            position: relative;
+            &::after {
+                content: '';
+                width: 62px;
+                height: 3px;
+                background-color: $mainColor;
+                display: block;
+                position: absolute;
+                top: 38px;
+                left: calc(50% - 62px/2);
+            }
+        }
+        .productNameSingle {
+            @include textUpper(18px, 900);
+            margin-top: 18px;
+            margin-bottom: 67px;
+        }
+        .productTextSingle {
+            @extend %textMain;
+            text-align: center;
+            color: #5e5e5e;
+        }
+        .productMaterialDesignerSingle {
+            margin-top: 28px;
+            width: 332px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @media(max-width: 450px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+            div {
+                @include textUpper();
+                span {
+                    color: #b9b9b9;
+                }
+            }
+        }
+        .productPriceSingle {
+            @include textUpper(24px, 700, $mainColor);
+            width: 100%;
+            margin-top: 37px;
+            padding-bottom: 43px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .formSingle {
+            margin-top: 63px;
+            padding: 0 40px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #ffffff;
+            @media(max-width: 550px) {
+                flex-direction: column;
+            }
+            label {
+                @include textUpper();
+                position: relative;
+                @media(max-width: 550px) {
+                    width: 100%;
+                }
+                .inputSingle {
+                    @extend %textMain;
+                    width: 144px;
+                    height: 35px;
+                    margin-top: 15px;
+                    margin-bottom: 28px;
+                    padding: 12px;
+                    border: 1px solid #eaeaea;
+                    outline: none;
+                    @media(max-width: 550px) {
+                        width: 100%;
+                    }
+                }
+                .selectSingle {
+                    font-size: 13px;
+                    font-weight: 400;
+                    width: 144px;
+                    height: 35px;
+                    margin-top: 15px;
+                    margin-bottom: 28px;
+                    padding-left: 12px;
+                    border: 1px solid #eaeaea;
+                    outline: none;
+                    color: #bcbcbc;
+                    @media(max-width: 550px) {
+                        width: 100%;
+                    }
+                }
+                .colorBlock {
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    background-color: $mainColor;
+                    position: absolute;
+                    top: 51px;
+                    left: 12px;
+                    & + select {
+                        padding-left: 36px;
+                    }
+                }
+            }
+            .buttonSingle {
+                font-size: 16px;
+                font-weight: 700;
+                color: $mainColor;
+                height: 55px;
+                width: 100%;
+                background-color: #ffffff;
+                outline: none;
+                cursor: pointer;
+                border: 1px solid $mainColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+.likeSingle {
+    padding-top: 34px;
+    .likeTitleSingle {
+        @include textUpper(24px, 900);
+        margin-bottom: 72px;
+        text-align: center;
+    }
+    .likeProductsSingle {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .featuredItem {
+            margin-bottom: 20px;
+            @media (max-width: 1082px) {
+                min-width: calc(50% - 10px);
+            }
+            @media (max-width: 556px) {
+                min-width: 100%;
+            }
+        }
+    }
+    &+ .subscribe{
+        @media(max-width: 550px) {
+            margin-top: 30px;
+        }
+    }
+}
